@@ -97,6 +97,10 @@ h3 {
 	.banner {
 		font-size: 1.6em;
 	}
+	
+	.banner__title {
+		font-size: 0.8em;
+	}
 
 	.sayhi__social svg {
 		width: 45px;
