@@ -99,7 +99,13 @@ h3 {
 	}
 	
 	.banner__title {
-		font-size: 0.8em;
+		display: none;
+	}
+
+	.banner__portrait::after {
+		content: "spawnius";
+		font-size: 2em;
+		line-height: 1.8em;
 	}
 
 	.sayhi__social svg {
