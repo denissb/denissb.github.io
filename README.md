@@ -1,1 +1,1 @@
-# Gitub profile home page
+# Github profile home page
