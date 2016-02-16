@@ -14,12 +14,16 @@ $base-line-height: 1.5;
 
 $spacing-unit:     30px;
 
-$text-color:        #fafafa;
+$text-color:        #111;
+$text-color2:       #fafafa; 
 $background-color:  #fdfdfd;
 $background-color2: #111;
-$brand-color:       #2a7ae2;
+$brand-color:       #111;
 
-$grey-color:       #828282;
+$link-color: #426DA9;
+$link-hover-color: #2C5697;
+
+$grey-color:       #111; // Gray shall not paaaas...
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
