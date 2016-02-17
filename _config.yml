@@ -9,7 +9,7 @@
 title: Home of another front-end developer
 email: spawnenius@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Coffe and code, code and coffe what else do you need..
+  Coffe and code, code and coffe - what else do you need?
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://spawnius.github.io" # the base hostname & protocol for your site
 github_username:  spawnius
