@@ -13,10 +13,10 @@ This approach might be usefull for a CMS system where editors want to specify co
 
 My first thought was that it can be achived on the back end side by generating javascript on the fly that registers components and routes. But I quickly dropped the idea by deciding that it's better to put apples to apples and leave front end things where they are supposed to be, well... the front end. So after a couple evenings I managed to code a [PoC](https://github.com/spawnius/angular2-dynamic-lazy-loading).
 
-The Angular 2 application needs to be loaded after the promise returned by AsyncProviders setup method is resolved.
-The setup method is static and accepts two parameters - the tag name of the application component and the path to the components folder. The dependancies are resolved before the application code is loaded, and exposed to the application component as static properties on the AsyncProvider.
+The Angular 2 application needs to be loaded after the promise returned by AsyncProviders SETUP is resolved.
+The SETUP method is static and accepts two parameters - the tag name of the application component and the path to the components folder. The dependancies are resolved before the application code is loaded, and exposed to the application component as static properties on the AsyncProvider.
 
-Example:
+[Example](https://github.com/spawnius/angular2-dynamic-lazy-loading/blob/master/app/main.ts):
 
 {% highlight javascript %}
 AsyncProvider.SETUP('my-app', './app/components').then(() => {
@@ -27,7 +27,7 @@ AsyncProvider.SETUP('my-app', './app/components').then(() => {
 });
 {% endhighlight %}
 
-During this process the following steps are performed by AsyncProvider in app/main.ts:
+During this process the following steps are performed by AsyncProvider:
 
 1. html is extracted from the body of the root component (provided in index.html)
 2. The extracted html is analysed for custom tags
