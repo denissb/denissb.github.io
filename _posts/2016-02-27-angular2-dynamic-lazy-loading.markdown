@@ -34,7 +34,7 @@ During this process the following steps are performed by AsyncProvider:
 3. AsyncProvider tries to load a component for each custom tag
 4. An app level route is generated for each component with the tag name of the component as its base and capitalized name as route name
 5. The previously extracted html is used as the template to render the app and defined components
-6. App get's loaded using System.import and reads a static property on AsyncProvider to get route, component and template definitions.
+6. App gets loaded using System.import and reads a static property on AsyncProvider to get route, component and template definitions.
 
 A working example can be found in the [github repo](https://github.com/spawnius/angular2-dynamic-lazy-loading).
 
