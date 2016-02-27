@@ -5,7 +5,7 @@ date:   2016-02-27 1:52:37 +0100
 categories: angular2 lazyloading lazy loading dynamic components javascript apps
 ---
 
-I started [this little experiment](https://github.com/spawnius/angular2-dynamic-lazy-loading) when an idea came to my mind that Angular 2 can be used for more than just single page applications, but also to build dynamic component based websites.
+I started [this little experiment](https://github.com/spawnius/angular2-dynamic-lazy-loading) when an idea came to my mind that Angular 2 can be used not only for single page applications, but also to build dynamic component based websites.
 
 What I wanted to acheve is - dynamically loaded and initialised components based on the html provided in the root application component as a template. The idea is simmilar to projection in Angular2 but happens dynamically, without the need to pre-register the routes and components in the application code. So I hope the name does not confuse you so much.
 
