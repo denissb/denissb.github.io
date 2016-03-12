@@ -177,7 +177,6 @@
 .page-heading {
     font-size: 22px;
     color: $text-color2;
-    padding: 20px 0 0;
 }
 
 .post-list {
@@ -186,6 +185,12 @@
 
     > li {
         margin-bottom: $spacing-unit;
+    }
+
+    .post-list-title {
+        padding: 0 0 10px;
+        margin-top: -10px;
+        border-bottom: 1px solid $text-color;   
     }
 }
 
@@ -198,7 +203,6 @@
     display: block;
     font-size: 24px;
 }
-
 
 
 /**
@@ -259,7 +263,6 @@
 */
 
 .home {
-    margin-top: -20px; //Forgive me father I have sinned..
     background: $background-color2;
 }
 
