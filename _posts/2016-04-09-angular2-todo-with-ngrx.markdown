@@ -9,6 +9,6 @@ On a bored afternoon I decided it would be cool to learn how to build an Angular
 
 A working example can be found on github for both [redux](https://github.com/spawnius/angular2-todo/tree/redux) and [basic](https://github.com/spawnius/angular2-todo) implementations.
 
-A possible improvement would be to implement a branch that is more complieant with [RFP](https://en.wikipedia.org/wiki/Functional_reactive_programming)
+A possible improvement would be to implement a branch that is more compliant with [RFP](https://en.wikipedia.org/wiki/Functional_reactive_programming).
 
 Thanks for visiting!
