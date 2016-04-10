@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Angular 2 todo app using ngrx and ngrx/devtools"
+title:  "Angular 2 Todo app using ngrx and ngrx/devtools"
 date:   2016-02-27 1:52:37 +0100
 categories: angular2 todo javascript apps ngrx ngrx/store ngrx/devtools
 ---
