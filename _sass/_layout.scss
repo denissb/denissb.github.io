@@ -44,6 +44,7 @@
     }
 
     @include media-query($on-palm) {
+
         position: absolute;
         top: 9px;
         right: $spacing-unit / 2;
@@ -298,12 +299,19 @@
 }
 
 @include media-query($on-palm) {
+    .site-title {
+        line-height: 36px;
+        margin: 10px 40px 10px 0;
+    }
+
+    .page-content {
+        padding: 20px 0;
+    }
     
     .banner__title,
     .banner__portrait {
         margin-bottom: 5px;
         font-size: 20px;
-        margin-left: -25px;
     }
 
     .footer-col {
