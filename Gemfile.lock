@@ -7,8 +7,17 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    ffi (1.9.14)
+    jekyll-watch (1.5.0)
+      listen (~> 3.0, < 3.1)
     kramdown (1.12.0)
     liquid (3.0.6)
+    listen (3.0.8)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
+    rb-fsevent (0.9.7)
+    rb-inotify (0.9.7)
+      ffi (>= 0.5.0)
     rouge (1.11.1)
 
 PLATFORMS
@@ -16,6 +25,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll-offline!
+  jekyll-watch
   kramdown
   liquid
   rouge
