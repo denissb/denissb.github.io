@@ -1,30 +1,130 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
-    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% for post in site.posts limit:10 %}
+    <title>Home of another front-end developer</title>
+    <description>Coffe and code, code and coffe - what else do you need?
+</description>
+    <link>https://denissb.github.io/</link>
+    <atom:link href="https://denissb.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 01 Nov 2016 16:59:17 +0100</pubDate>
+    <lastBuildDate>Tue, 01 Nov 2016 16:59:17 +0100</lastBuildDate>
+    <generator>Jekyll v3.2.1</generator>
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
-        {% for tag in post.tags %}
-        <category>{{ tag | xml_escape }}</category>
-        {% endfor %}
-        {% for cat in post.categories %}
-        <category>{{ cat | xml_escape }}</category>
-        {% endfor %}
+        <title>Angular 2 Todo app using ngrx and ngrx/devtools</title>
+        <description>&lt;p&gt;On a bored afternoon I decided it would be cool to learn how to build an Angular2 application using &lt;a href=&quot;https://github.com/ngrx&quot;&gt;ngrx&lt;/a&gt; with state tracking and devtool integration. A working example can be found on github for both &lt;a href=&quot;https://github.com/spawnius/angular2-todo/tree/redux&quot;&gt;redux&lt;/a&gt; and &lt;a href=&quot;https://github.com/spawnius/angular2-todo&quot;&gt;basic&lt;/a&gt; implementations.&lt;/p&gt;
+
+&lt;p&gt;Immutability and uni-directional flow can help us build more robust, scalable and performant front-end applications. Not to mention it’s cool to be able to track the state of your application and manipulate it on demand.&lt;/p&gt;
+
+&lt;p&gt;A possible improvement would be to implement a branch that is more compliant with &lt;a href=&quot;https://en.wikipedia.org/wiki/Functional_reactive_programming&quot;&gt;RFP&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thanks for visiting!&lt;/p&gt;
+</description>
+        <pubDate>Sat, 27 Feb 2016 01:52:37 +0100</pubDate>
+        <link>https://denissb.github.io/angular2/todo/javascript/apps/ngrx/ngrx/store/ngrx/devtools/2016/02/27/angular2-todo-with-ngrx.html</link>
+        <guid isPermaLink="true">https://denissb.github.io/angular2/todo/javascript/apps/ngrx/ngrx/store/ngrx/devtools/2016/02/27/angular2-todo-with-ngrx.html</guid>
+        
+        
+        <category>angular2</category>
+        
+        <category>todo</category>
+        
+        <category>javascript</category>
+        
+        <category>apps</category>
+        
+        <category>ngrx</category>
+        
+        <category>ngrx/store</category>
+        
+        <category>ngrx/devtools</category>
+        
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>Angular 2 dynamic lazy loading</title>
+        <description>&lt;p&gt;I started &lt;a href=&quot;https://github.com/spawnius/angular2-dynamic-lazy-loading&quot;&gt;this little experiment&lt;/a&gt; when an idea came to my mind that Angular 2 can be used not only for single page applications, but also to build dynamic component based websites.&lt;/p&gt;
+
+&lt;p&gt;What I wanted to acheve is - dynamically loaded and initialised components based on the html provided in the root application component as a template. The idea is simmilar to projection in Angular2 but happens dynamically, without the need to pre-register the routes and components in the application code. So I hope the name does not confuse you so much.&lt;/p&gt;
+
+&lt;p&gt;This approach might be usefull for a CMS system where editors want to specify components on the page by simply using custom tags in a WYSIWYG editor, or apps that have a large number of components that can be moved or removed from pages.&lt;/p&gt;
+
+&lt;p&gt;My first thought was that it can be achived on the back end side by generating javascript on the fly that registers components and routes. But I quickly dropped the idea by deciding that it’s better to put apples to apples and leave front end things where they are supposed to be, well… the front end. So after a couple evenings I managed to code a &lt;a href=&quot;https://github.com/spawnius/angular2-dynamic-lazy-loading&quot;&gt;PoC&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The Angular 2 application needs to be loaded after the promise returned by AsyncProviders SETUP is resolved.
+The SETUP method is static and accepts two parameters - the tag name of the application component and the path to the components folder. The dependancies are resolved before the application code is loaded, and exposed to the application component as static properties on the AsyncProvider.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/spawnius/angular2-dynamic-lazy-loading/blob/master/app/main.ts&quot;&gt;Example&lt;/a&gt;:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;AsyncProvider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;SETUP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'my-app'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'./app/components'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Now we are ready to initialize the app with lazy loaded components&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'./app/components/app.component'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+       &lt;span class=&quot;nx&quot;&gt;bootstrap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;During this process the following steps are performed by AsyncProvider:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;html is extracted from the body of the root component (provided in index.html)&lt;/li&gt;
+  &lt;li&gt;The extracted html is analysed for custom tags&lt;/li&gt;
+  &lt;li&gt;AsyncProvider tries to load a component for each custom tag&lt;/li&gt;
+  &lt;li&gt;An app level route is generated for each component with the tag name of the component as its base and capitalized name as route name&lt;/li&gt;
+  &lt;li&gt;The previously extracted html is used as the template to render the app and defined components&lt;/li&gt;
+  &lt;li&gt;App gets loaded using System.import and reads a static property on AsyncProvider to get route, component and template definitions.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;A working example can be found in the &lt;a href=&quot;https://github.com/spawnius/angular2-dynamic-lazy-loading&quot;&gt;github repo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you are interested in the idea please don’t hesitate to create an issue or pull request ^__-&lt;/p&gt;
+
+&lt;p&gt;Thanks for visiting!&lt;/p&gt;
+</description>
+        <pubDate>Sat, 27 Feb 2016 01:52:37 +0100</pubDate>
+        <link>https://denissb.github.io/angular2/lazyloading/lazy/loading/dynamic/components/javascript/apps/2016/02/27/angular2-dynamic-lazy-loading.html</link>
+        <guid isPermaLink="true">https://denissb.github.io/angular2/lazyloading/lazy/loading/dynamic/components/javascript/apps/2016/02/27/angular2-dynamic-lazy-loading.html</guid>
+        
+        
+        <category>angular2</category>
+        
+        <category>lazyloading</category>
+        
+        <category>lazy</category>
+        
+        <category>loading</category>
+        
+        <category>dynamic</category>
+        
+        <category>components</category>
+        
+        <category>javascript</category>
+        
+        <category>apps</category>
+        
+      </item>
+    
+      <item>
+        <title>Hello world!</title>
+        <description>&lt;p&gt;I decided to upgrade my github page to Jekyll, not sure I want to commit to making blog posts but why not have the option..&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// It's as simple as:&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Hello world!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Mon, 15 Feb 2016 22:28:37 +0100</pubDate>
+        <link>https://denissb.github.io/jekyll/update/helloworld/upgrade-to-jekyll/2016/02/15/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">https://denissb.github.io/jekyll/update/helloworld/upgrade-to-jekyll/2016/02/15/welcome-to-jekyll.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+        <category>helloworld</category>
+        
+        <category>upgrade-to-jekyll</category>
+        
+      </item>
+    
   </channel>
 </rss>
