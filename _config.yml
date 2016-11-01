@@ -21,3 +21,6 @@ googleplus_username: +DenissBorisovs
 markdown: kramdown
 highlighter: rouge
 encoding: utf-8
+
+#Gems
+gems: ['jekyll-offline']
