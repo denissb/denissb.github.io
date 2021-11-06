@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-title: About Me
+title: CV
 templateClass: tmpl-post
 menu:
   visible: true

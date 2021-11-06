@@ -2,9 +2,11 @@
   border-bottom: 1px dashed var(--lightgray);
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 
   & a {
-    padding: 1em;
+    padding: 1.2em;
+    font-size: 1.2em;
     display: block;
 
     &:not(:hover) {
