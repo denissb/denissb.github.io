@@ -13,7 +13,7 @@
     <script type="module" src="/js/main.js"></script>
   </head>
   <body>
-    <nav class="navbar">
+    <nav {% if url == '/' %}class="navbar home"{% else %}class="navbar"{% endif %}>
       <a href="/" class="navbar-home">
         <strong>{{ site.title }}</strong>
       </a>
@@ -36,5 +36,6 @@
     <footer></footer>
 
     <!-- Current page: {{ url }} -->
+    {% include "templates/footer.njk" %}
   </body>
 </html>

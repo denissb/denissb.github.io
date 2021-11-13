@@ -7,6 +7,9 @@
   --darkgray: #0d1117;
   --blue: #035096;
   --white: #fff;
+  --hoverShadow: drop-shadow(2px 2px 2px var(--blue));
+  --footerHeight: 250px;
+  --mobileFooterHeight: 375px;
 }
 
 html,
@@ -16,6 +19,7 @@ body {
   font-family: "Anonymous Pro", Consolas, system-ui, sans-serif;
   color: var(--darkgray);
   background-color: var(--white);
+  height: 100%;
 }
 
 .body-home {
@@ -23,7 +27,8 @@ body {
 }
 
 main {
-  padding: 5vh 5vw;
+  padding: 0 5vw;
+  min-height: calc(100vh - var(--footerHeight));
 
   & > :first-child {
     margin-top: 0;
@@ -32,6 +37,28 @@ main {
 
 a {
   color: var(--blue);
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 1.5rem 3rem;
+  border-radius: 1rem;
+  background-color: var(--darkgray);
+  color: var(--white);
+  font-size: 1.5em;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.download-cv {
+  padding-top: 2.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    filter:var(--hoverShadow);
+  }
 }
 
 /* Warning */
@@ -60,4 +87,26 @@ hr {
   border: 0;
   border-top: solid 2px var(--lightgray);
   margin: 5vh 0;
+}
+
+footer {
+  padding: 1em 1.2em 1.5em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* 
+  Media quereis for mobile
+*/
+@media (max-width:801px) { 
+  main {
+    min-height: calc(100vh - var(--mobileFooterHeight));
+  }
+
+  footer {
+    text-align: center;
+  }
 }

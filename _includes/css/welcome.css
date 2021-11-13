@@ -4,6 +4,7 @@
   align-items: center;
   background: var(--darkgray);
   color: var(--white);
+  margin-bottom: 75px;
 }
 
 .avatar-banner {
@@ -44,7 +45,7 @@
   position: relative;
   top: 75px;
   margin-top: -1em;
-  border-radius: 15px;
+  border-radius: 1em;
 }
 
 .social-media-list li {
@@ -69,7 +70,7 @@
 }
 
 .social-media-list a svg:hover {
-  filter: drop-shadow(2px 2px 2px var(--blue));
+  filter:var(--hoverShadow);
 }
 
 .console-line {
