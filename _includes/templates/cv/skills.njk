@@ -1,0 +1,10 @@
+<ul class="skills-list">
+  {% for skill in skills %}
+  <li>
+    <span class="skill-name">{{ skill.name }}</span>
+    <div class="skill-bar">
+      <span class="skill-progress" style="width: {{ skill.level * 20 }}%"></span>
+    </div>
+  </li>
+  {% endfor %}
+</ul>

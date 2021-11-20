@@ -41,7 +41,7 @@ a {
 
 .download-btn {
   display: inline-block;
-  padding: 1.5rem 3rem;
+  padding: 1.2rem 2.4rem;
   border-radius: 1rem;
   background-color: var(--darkgray);
   color: var(--white);
@@ -51,7 +51,7 @@ a {
 }
 
 .download-cv {
-  padding-top: 2.2em;
+  padding-top: 2.4em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,13 +89,35 @@ hr {
   margin: 5vh 0;
 }
 
+.skills-wrapper {
+  margin: 0 auto;
+  width: 80vw;
+}
+
+.skills-wrapper h1 {
+  padding: 1.5rem 1rem 0;
+}
+
 footer {
-  padding: 1em 1.2em 1.5em;
+  padding: 1em 1.2em 2em;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   flex-direction: row;
   align-items: center;
+}
+
+
+/* 
+  Media quereis for large screens
+*/
+
+@media (min-width:1400px) { 
+  .skills-wrapper {
+    margin: 0 auto;
+    width: 60vw;
+    max-width: 1200px;
+  }
 }
 
 /* 
@@ -106,7 +128,12 @@ footer {
     min-height: calc(100vh - var(--mobileFooterHeight));
   }
 
+  .skills-wrapper {
+    width: 90vw;
+  }
+
   footer {
     text-align: center;
   }
 }
+

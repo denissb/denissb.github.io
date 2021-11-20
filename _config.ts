@@ -16,6 +16,7 @@ site
   .ignore("README.md")
   .copy("img")
   .copy("fonts")
+  .copy("snaptext")
   .use(postcss())
   .use(terser())
   .use(date())

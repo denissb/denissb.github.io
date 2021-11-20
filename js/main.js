@@ -8,3 +8,16 @@ document.querySelectorAll("oom-search").forEach((el) => {
     window.location.href = value;
   });
 });
+
+
+const animationObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animating');
+    }
+  });
+});
+
+document.querySelectorAll('.skill-progress').forEach((el) =>
+  animationObserver.observe(el)
+);
