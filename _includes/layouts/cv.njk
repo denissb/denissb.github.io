@@ -1,0 +1,34 @@
+---
+layout: layouts/base.njk
+bodyClass: body-cv
+---
+<div class="cv-dark cv-grid-container">
+  <div class="cv-initials-box grid-area-a">
+    {% include "templates/cv/initials.njk" %}
+  </div>
+  <div class="grid-area-b">
+    <div class="cv-details-box">
+      {% include "templates/cv/details.njk" %} 
+    </div>
+    <div class="cv-skills-box">
+     {% include "templates/cv/skills.njk" %}
+    </div>
+    <div class="cv-languages-box">
+      {% include "templates/cv/languages.njk" %}
+    </div>
+  </div>
+  <div class="grid-area-c">
+    <div class="cv-description-box">
+      {% include "templates/cv/description.njk" %}
+    </div>
+     <div class="cv-employment-box">
+      {% include "templates/cv/employment.njk" %}
+    </div>
+    <div class="cv-education-box">
+      {% include "templates/cv/education.njk" %}
+    </div>
+     <div class="cv-hobby-box">
+      {% include "templates/cv/hobbies.njk" %}
+    </div>
+  </div>
+</div>

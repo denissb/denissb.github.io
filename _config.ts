@@ -8,6 +8,7 @@ import slugifyUrls from "lume/plugins/slugify_urls.ts";
 import resolveUrls from "lume/plugins/resolve_urls.ts";
 import gpm from "https://deno.land/x/gpm@v0.2.0/mod.ts";
 
+
 const site = lume({
   location: new URL("https://denissb.github.io/"),
 });

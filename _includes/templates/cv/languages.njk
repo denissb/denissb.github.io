@@ -1,0 +1,13 @@
+<section class="cv-languages">
+  <h3>Languages</h3>
+  <ul class="progress-list">
+    {% for language in cv.languages %}
+    <li>
+      <span class="progress-name">{{ language.name }}</span>
+      <div class="progress-bar">
+        <span class="bar-progress" style="width: {{ language.level * 20 }}%"></span>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

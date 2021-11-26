@@ -1,0 +1,5 @@
+.cv-social-links {
+  & a {
+    display: block;
+  }
+}

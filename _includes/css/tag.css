@@ -1,3 +1,7 @@
+.body-tag {
+  margin-top: 1.4em;
+}
+
 .tag {
   display: inline-block;
   text-transform: uppercase;

@@ -1,4 +1,6 @@
-.skills-list {
+
+
+.progress-list {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -12,33 +14,32 @@
   align-items: flex-start;
 }
 
-.skill-name {
+.progress-name {
   padding: 0.5em 0;
   display: inline-block;
   font-size: 1em;
 }
 
-.skills-list li {
+.progress-list li {
   flex: 1 1 50%;
   max-width: 50%;
   padding: 1em;
   box-sizing: border-box;
 }
 
-.skill-bar {
+.progress-bar {
   background: var(--lightgray);
   border-radius: 1rem;;
 }
 
-.skill-progress {
+.bar-progress {
   padding: 0.3em;
   display: block;
   border-radius: 1rem;
   background-color: var(--darkgray);
-  
 }
 
-.skill-progress.animating {
+.bar-progress.animating {
   animation: expandWidth 1.8s ease-in-out;
 }
 

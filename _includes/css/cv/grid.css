@@ -1,0 +1,56 @@
+.cv-grid-container {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(3,1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-template-areas: 
+            "a a a"
+            "b c c"
+            "b c c"
+}
+
+.grid-area-a {
+  grid-area: a;
+}
+
+.grid-area-b {
+  grid-area: b;
+  
+}
+
+.grid-area-c {
+  grid-area: c;
+}
+
+/* Coloring for CSS debugging */
+/* .cv-initials-box {
+  background: blue;
+}
+
+.cv-description-box {
+  background: violet;
+}
+
+.cv-details-box {
+  background: green;
+}
+
+.cv-skills-box {
+  background: gray;
+}
+
+.cv-languages-box {
+  background: navy;
+}
+
+.cv-employment-box {
+  background: yellow;
+}
+
+.cv-education-box {
+  background: orange;
+}
+
+.cv-hobby-box {
+  background: cyan;
+} */

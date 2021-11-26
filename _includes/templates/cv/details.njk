@@ -1,0 +1,21 @@
+<section class="cv-personal-info">
+  <h3>Details</h3>
+
+  <h4>Address</h4>
+  <p>{{ cv.personalInfo.location }}</p>
+  <h4>Phone</h4>
+  <p>{{ cv.contact.tel }}</p>
+  <h4>Email</h4>
+  <a href="mailto:deniss.borisovs@gmail.com">{{ cv.contact.email }}</a>
+  <h4>Date of birth</h4>
+  <p>{{ cv.personalInfo.birthDate }}</p>
+  <h4>Nationality</h4>
+  <p>{{ cv.personalInfo.nationality }}</p>
+</section>
+
+<section class="cv-social-links">
+  <h3>Links</h3>
+  {% for social in cv.socialLinks %}
+  <a href="{{ social.url }}">{{ social.name }}</a>
+  {% endfor %}
+</section>

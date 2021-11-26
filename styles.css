@@ -1,5 +1,6 @@
 /* Code syntax highlight */
 @import "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.0/build/styles/github-dark.min.css";
+/* Core CSS */
 @import "css/normalize.css";
 @import "css/main.css";
 @import "css/navbar.css";
@@ -8,4 +9,9 @@
 @import "css/post-list.css";
 @import "css/post.css";
 @import "css/tag.css";
-@import "css/cv.css";
+/* CV */
+@import "css/cv/cv-dark.css";
+@import "css/cv/grid.css";
+@import "css/cv/progress.css";
+@import "css/cv/details.css";
+

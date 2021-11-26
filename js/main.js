@@ -18,6 +18,6 @@ const animationObserver = new IntersectionObserver(entries => {
   });
 });
 
-document.querySelectorAll('.skill-progress').forEach((el) =>
+document.querySelectorAll('.bar-progress').forEach((el) =>
   animationObserver.observe(el)
 );

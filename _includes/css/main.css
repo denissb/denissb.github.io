@@ -5,6 +5,7 @@
   --red: #c04;
   --lightgray: #e6e6e6;
   --darkgray: #0d1117;
+  --text-gray: #3d3d3d;
   --blue: #035096;
   --white: #fff;
   --hoverShadow: drop-shadow(2px 2px 2px var(--blue));
@@ -22,8 +23,17 @@ body {
   height: 100%;
 }
 
+p {
+  color: var(--text-gray);
+}
+
 .body-home {
   padding: 0;
+}
+
+.body-cv, .body-tag, .body-post {
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 main {
@@ -94,8 +104,9 @@ hr {
   width: 80vw;
 }
 
-.skills-wrapper h1 {
-  padding: 1.5rem 1rem 0;
+.skills-wrapper h3 {
+  font-size: 2em;
+  padding: 1.4rem 1rem 0;
 }
 
 footer {
@@ -106,7 +117,6 @@ footer {
   flex-direction: row;
   align-items: center;
 }
-
 
 /* 
   Media quereis for large screens

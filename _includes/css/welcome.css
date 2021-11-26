@@ -5,6 +5,10 @@
   background: var(--darkgray);
   color: var(--white);
   margin-bottom: 75px;
+
+  & p {
+    color: var(--white);
+  }
 }
 
 .avatar-banner {
