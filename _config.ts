@@ -7,16 +7,28 @@ import basePath from "lume/plugins/base_path.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
 import resolveUrls from "lume/plugins/resolve_urls.ts";
 import gpm from "https://deno.land/x/gpm@v0.2.0/mod.ts";
-
+import generatePdf from "./eventHandlers/generatePdf.ts";
 
 const site = lume({
   location: new URL("https://denissb.github.io/"),
+});
+
+site.addEventListener("afterUpdate", (event: { files: Set<string> }) => {
+  const isCVUpdate = event.files.has('/cv.md');
+  if (isCVUpdate) {
+    generatePdf({
+      targetFolder: './assets', 
+      uri: '/cv', 
+      fileName: 'Deniss_Borisovs_CV.pdf',
+    });
+  }
 });
 
 site
   .ignore("README.md")
   .copy("img")
   .copy("fonts")
+  .copy("assets")
   .copy("snaptext")
   .use(postcss())
   .use(terser())

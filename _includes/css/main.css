@@ -118,7 +118,7 @@ footer {
   align-items: center;
 }
 
-/* 
+/*
   Media quereis for large screens
 */
 
@@ -147,3 +147,20 @@ footer {
   }
 }
 
+/* 
+ Printing styles
+*/
+@media print {
+  footer, 
+  nav.navbar {
+    display: none;
+  }
+}
+
+@page {
+  margin: 16mm 0; 
+}
+
+@page :first {
+  margin-top: 0;
+}

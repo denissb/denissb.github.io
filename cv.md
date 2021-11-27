@@ -6,12 +6,13 @@ menu:
   order: 2
 cv:
   name: Deniss Borisovs
-  occupation: Senior Web Developer
+  occupation: Senior Web Developer focused on Front-end
+  updateDate: 27.11.2021
   contact:
     tel: +45 22286842
     email: deniss.borisovs@gmail.com
   description: |
-    Experienced IT professional interested in exploring and applying technology to solve modern day problems. Currently focusing on Front-end (mobile/web/cross-platform) and cloud-native application development, with love for Open source software and knowledge sharing. 
+    I am an experienced IT professional interested in exploring and applying technology to solve modern day problems. Currently focusing on Front-end (mobile/web/cross-platform) and cloud-native application design and development, with love for Open source software and knowledge sharing. 
 
     I am used to being a part of a productive team, but am also able to effectively self-manage during independent projects.
     
@@ -122,6 +123,7 @@ cv:
 
   hobbies: |
     I enjoy cooking, working out, DJ'ing with my friend and playing video games. I am a bit of a foodie and never say no to a good beer or coffee.
+    Sometimes I can be found coding on a side project with a cup of coffe when I am in a creative mood.
 ---
 
 I am a person that writes stuff.
