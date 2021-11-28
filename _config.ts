@@ -14,12 +14,12 @@ const site = lume({
 });
 
 site.addEventListener("afterUpdate", (event: { files: Set<string> }) => {
-  const isCVUpdate = event.files.has('/cv.md');
+  const isCVUpdate = event.files.has("/cv.md");
   if (isCVUpdate) {
     generatePdf({
-      targetFolder: './assets', 
-      uri: '/cv', 
-      fileName: 'Deniss_Borisovs_CV.pdf',
+      targetFolder: "./assets",
+      uri: "/cv",
+      fileName: "Deniss_Borisovs_CV.pdf",
     });
   }
 });
@@ -27,7 +27,6 @@ site.addEventListener("afterUpdate", (event: { files: Set<string> }) => {
 site
   .ignore("README.md")
   .copy("img")
-  .copy("fonts")
   .copy("assets")
   .copy("snaptext")
   .use(postcss())
