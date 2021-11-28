@@ -176,10 +176,17 @@ hr {
   nav.navbar {
     display: none;
   }
+
+  body {
+    zoom: 82%;
+  }
+  table {
+    page-break-inside: avoid;
+  }
 }
 
 @page {
-  margin: 16mm 0; 
+  margin: 18mm 0; 
 }
 
 @page :first {

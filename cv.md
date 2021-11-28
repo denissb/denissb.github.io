@@ -25,7 +25,7 @@ cv:
 
   personalInfo:
     location: Copenhagen, Denmark
-    birthDate: 1989-09-26
+    birthDate: 1989-09-27
     nationality: Latvian
     drivingLicense: B
   socialLinks:

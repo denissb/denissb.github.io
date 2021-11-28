@@ -76,6 +76,13 @@
     }
   }
 
+  & .cv-languages, 
+  & .cv-skills {
+    & h3 {
+      margin-bottom: 0.5em;
+    }
+  }
+
   & .resume-item {
     & h4 {
       text-transform: none;
@@ -99,7 +106,6 @@
   & .progress-list {
     flex-direction: column;
     flex-wrap: nowrap;
-    margin-top: -0.5em;
 
     & li {
       padding: 0.5em 0;

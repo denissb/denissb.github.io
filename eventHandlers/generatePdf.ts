@@ -13,14 +13,18 @@ const generatePdf = async (params: GeneratePdfParams) => {
   const { targetFolder, uri, fileName } = params;
 
   await queue.push(async () => {
+    const path = `${targetFolder}/${fileName}`;
+
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    await page.goto(`http://localhost:3000/${uri}`);
+
+    await page.goto(`http://localhost:3000/${uri}`, {
+      waitUntil: "networkidle2",
+    });
 
     await page.pdf({
-      path: `${targetFolder}/${fileName}`,
+      path,
       format: "a4",
-      scale: 0.8,
       printBackground: true,
     });
 
