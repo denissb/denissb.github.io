@@ -8,8 +8,9 @@
   & h2 {
     font-size: 1.5em;
     font-weight: normal;
-    padding-bottom: 1em;
     color: #3d3d3d;
+    display: inline-block;
+    margin-bottom: 0.5em;
   }
 
   & h3 {
@@ -26,9 +27,22 @@
     }
   }
 
+  & .cv-initials {
+    & .cv-updated-on {
+      float: right;
+      display: inline;
+      padding: 0;
+      line-height: 3;
+    }
+  }
+
   & h4 {
     text-transform: uppercase;
     font-size: 1.2em;
+  }
+
+  & section {
+    padding-bottom: 0.2em;
   }
 
   & .grid-area-c {
@@ -44,10 +58,6 @@
     padding-bottom: 2.5em;
     padding-right: 2.5em;
     border-right: 3px solid var(--lightgray);
-  }
-
-  & section {
-    padding-top: 1em;
   }
 
   & p, 
@@ -89,6 +99,7 @@
   & .progress-list {
     flex-direction: column;
     flex-wrap: nowrap;
+    margin-top: -0.5em;
 
     & li {
       padding: 0.5em 0;
@@ -100,5 +111,65 @@
     & .progress-name {
       padding-bottom: 0.5em;
     }
+  }
+}
+
+/* 
+  Media quereis for mobile
+*/
+@media screen and (max-width:767px) {
+  .cv-dark {
+    & h1 {
+      font-size: 2.5em;
+    }
+
+    & h2,
+    & h3 {
+      margin-top: 0;
+    }
+
+    & .grid-area-a {
+      border-bottom: none;
+    }
+  
+    & .grid-area-b {
+      padding-bottom: 0;
+      padding-right: 0;
+      border-right: none;
+    }
+
+    & section {
+      padding-bottom: 0;
+      padding: 2em 0 0;
+    }
+
+    & .cv-details-box {
+      padding-top: 2em;
+    }
+
+    & .cv-personal-info {
+      margin-top: 2em;
+      border-top: 3px solid var(--lightgray);
+    }
+
+    & .grid-area-c {
+      padding-bottom: 0;
+      padding-left: 0;
+    }
+
+    & .cv-initials {
+      padding-top: 0;
+      
+      & .cv-updated-on {
+        line-height: 1;
+      }
+    }
+
+    & .cv-social-links {
+      & a {
+        display: inline;
+        padding-right: 0.5em;
+      }
+    }  
   }
 }

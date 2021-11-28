@@ -11,6 +11,7 @@
   --hoverShadow: drop-shadow(2px 2px 2px var(--blue));
   --footerHeight: 250px;
   --mobileFooterHeight: 375px;
+  --maxWidth: 1440px;
 }
 
 html,
@@ -23,17 +24,26 @@ body {
   height: 100%;
 }
 
-p {
+p, li {
   color: var(--text-gray);
 }
 
-.body-home {
-  padding: 0;
+a {
+  color: var(--blue);
 }
 
-.body-cv, .body-tag, .body-post {
-  max-width: 1400px;
-  margin: 0 auto;
+h1 {
+  font-size: 3em;
+  padding-top: 0.5em;
+}
+
+table {
+  margin: 1em 0;
+
+  & td,
+  & th {
+    padding-right: 1em;
+  }
 }
 
 main {
@@ -45,8 +55,37 @@ main {
   }
 }
 
-a {
-  color: var(--blue);
+footer {
+  padding: 1em 5vw 2em;
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+pre,
+code {
+  font-family: "Anonymous Pro", Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+hr {
+  border: 0;
+  border-top: solid 3px var(--lightgray);
+  margin: 5vh 0;
+}
+
+.body-home {
+  padding: 0;
+}
+
+.body-cv, .body-tag, .body-post {
+  max-width: var(--maxWidth);
+  margin: 0 auto;
 }
 
 .download-btn {
@@ -77,45 +116,15 @@ a {
   padding: 1em 0.5em;
 }
 
-table {
-  margin: 1em 0;
-
-  & td,
-  & th {
-    padding-right: 1em;
-  }
-}
-
-pre,
-code {
-  font-family: "Anonymous Pro", Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
-  line-height: 1.5;
-  font-size: 1rem;
-}
-
-hr {
-  border: 0;
-  border-top: solid 2px var(--lightgray);
-  margin: 5vh 0;
-}
-
 .skills-wrapper {
   margin: 0 auto;
+  padding-bottom: 1em;
   width: 80vw;
 }
 
 .skills-wrapper h3 {
   font-size: 2em;
   padding: 1.4rem 1rem 0;
-}
-
-footer {
-  padding: 1em 1.2em 2em;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  flex-direction: row;
-  align-items: center;
 }
 
 /*
@@ -133,7 +142,7 @@ footer {
 /* 
   Media quereis for mobile
 */
-@media (max-width:801px) { 
+@media screen and (max-width:767px) { 
   main {
     min-height: calc(100vh - var(--mobileFooterHeight));
   }
@@ -142,8 +151,20 @@ footer {
     width: 90vw;
   }
 
+  .navbar {
+    justify-content: center;
+    align-items: center;
+  }
+
   footer {
     text-align: center;
+    justify-content: center;
+    padding: 1em 1em 2em;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    padding-top: 0;
   }
 }
 

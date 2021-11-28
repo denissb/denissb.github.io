@@ -1,4 +1,5 @@
 <section class="cv-initials">
   <h1>{{ cv.name }}</h1>
   <h2>{{ cv.occupation }}</h2>
+  <p class="cv-updated-on">Updated on: {{ cv.updateDate | date('HUMAN_DATE') }}</p>
 </section>

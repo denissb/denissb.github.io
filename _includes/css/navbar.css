@@ -1,17 +1,24 @@
 .navbar {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  border-bottom: 1px dashed var(--darkgray);
+  justify-content: space-between;
+  border-bottom: 1px dashed var(--lightgray);
+  margin: 0 auto;
+  padding: 0 5vw;
+  max-width: var(--maxWidth);
 
   & a {
-    padding: 1.2em;
     font-size: 1.2em;
     display: block;
 
     &:not(:hover) {
       text-decoration: none;
     }
+  }
+
+  & .navbar-home {
+    padding: 1.2em;
+    padding-left: 0;
   }
 }
 
@@ -26,6 +33,10 @@ nav.home {
   display: flex;
   flex-wrap: wrap;
 
+  & a {
+    padding: 1.2em;
+  }
+
   & [aria-current="page"] {
     font-weight: bold;
     text-decoration: underline;
@@ -37,4 +48,30 @@ nav.home {
   margin-left: auto;
   display: flex;
   align-items: center;
+}
+
+/*
+  Media quereis for large screens
+*/
+
+@media (min-width:1400px) { 
+  .navbar {
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* 
+  Media quereis for mobile
+*/
+@media (max-width:767px) {
+  .navbar {
+    justify-content: center;
+    align-items: center;
+
+    & .navbar-home {
+      padding: 1.2em 0;
+      text-align: center;
+    }
+  }
 }

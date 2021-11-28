@@ -22,6 +22,16 @@
   grid-area: c;
 }
 
+/* 
+  Media quereis for mobile
+*/
+@media screen and (max-width:767px) { 
+  .cv-grid-container {
+    display: block;
+  }
+}
+
+
 /* Coloring for CSS debugging */
 /* .cv-initials-box {
   background: blue;

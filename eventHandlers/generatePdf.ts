@@ -15,7 +15,6 @@ const generatePdf = async (params: GeneratePdfParams) => {
   await queue.push(async () => {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-
     await page.goto(`http://localhost:3000/${uri}`);
 
     await page.pdf({

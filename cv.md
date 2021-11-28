@@ -7,14 +7,13 @@ menu:
 cv:
   name: Deniss Borisovs
   occupation: Senior Web Developer focused on Front-end
-  updateDate: 27.11.2021
+  updateDate: 2021-11-27
   contact:
-    tel: +45 22286842
     email: deniss.borisovs@gmail.com
   description: |
     I am an experienced IT professional interested in exploring and applying technology to solve modern day problems. Currently focusing on Front-end (mobile/web/cross-platform) and cloud-native application design and development, with love for Open source software and knowledge sharing. 
 
-    I am used to being a part of a productive team, but am also able to effectively self-manage during independent projects.
+    I am used to being a part of a productive team, but am also able to effectively self-manage during independent projects. 
     
     Actively practicing the following technologies:
     - React/React Native
@@ -26,7 +25,7 @@ cv:
 
   personalInfo:
     location: Copenhagen, Denmark
-    birthDate: 26.09.1989
+    birthDate: 1989-09-26
     nationality: Latvian
     drivingLicense: B
   socialLinks:
@@ -95,7 +94,8 @@ cv:
     - period: October 2010 – March 2012
       position: Freelance Web developer
       location: Liepaja
-      description: Web development on the LAMP stack, web deisgn, UX design.
+      description: |
+        Web development on the LAMP stack, web deisgn, UX design. Typically the projects were websites for small business and landing pages for new start-ups.
 
   education:
     - period: September 2011 – July 2013

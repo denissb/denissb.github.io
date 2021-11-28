@@ -16,7 +16,7 @@
     {% for tag in post.data.tags %}
     {% for pageTag in search.pages("type=tag") %}
     {% if pageTag.data.tag == tag %}
-    <a href="{{ pageTag.data.url  }}" class="tag">{{ tag }}</a>
+    <a href="{{ pageTag.data.url }}" class="tag">{{ tag }}</a>
     {% endif %}
     {% endfor %}
     {% endfor %}
