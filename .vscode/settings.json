@@ -1,0 +1,11 @@
+{
+  "deno.enable": true,
+  "deno.lint": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "denoland.vscode-deno",
+  "deno.unstable": true,
+  "deno.importMap": ".vscode/lume_import_map.json",
+  "deno.suggest.imports.hosts": {
+    "https://deno.land": true
+  }
+}

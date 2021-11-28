@@ -1,0 +1,16 @@
+<section class="cv-employment">
+  <h3>Employment history</h3>
+  {% for job in cv.employment %}
+    <div class="resume-item">
+      <div class="resume-item-title">
+        <h4>{{ job.position }}, {{ job.company }}</h4>
+      </div>
+      <div class="resume-item-period">
+        <p>{{ job.period }}, {{ job.location }}</p>
+      </div>
+      <div class="resume-item-description">
+        <p>{{ job.description }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</section>

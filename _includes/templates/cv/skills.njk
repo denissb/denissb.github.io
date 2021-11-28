@@ -1,0 +1,13 @@
+<section class="cv-skills">
+  <h3>Skills</h3>
+  <ul class="progress-list">
+    {% for skill in cv.skills %}
+    <li>
+      <span class="progress-name">{{ skill.name }}</span>
+      <div class="progress-bar">
+        <span class="bar-progress" style="width: {{ skill.level * 20 }}%"></span>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

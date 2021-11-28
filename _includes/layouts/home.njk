@@ -1,0 +1,14 @@
+---
+layout: layouts/base.njk
+bodyClass: body-home
+---
+
+{% include "templates/welcome.njk" %}
+
+{% include "templates/download-cv.njk" %}
+
+<div class="skills-wrapper">
+  {% include "templates/cv/skills.njk" %}
+</div>
+
+{{ content | safe }}

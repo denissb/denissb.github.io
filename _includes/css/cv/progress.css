@@ -1,0 +1,47 @@
+
+.progress-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+  flex: 1;
+  align-items: flex-start;
+}
+
+.progress-name {
+  padding: 0.5em 0;
+  display: inline-block;
+  font-size: 1em;
+}
+
+.progress-list li {
+  flex: 1 1 50%;
+  max-width: 50%;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.progress-bar {
+  background: var(--lightgray);
+  border-radius: 1rem;;
+}
+
+.bar-progress {
+  padding: 0.3em;
+  display: block;
+  border-radius: 1rem;
+  background-color: var(--darkgray);
+}
+
+.bar-progress.animating {
+  animation: expandWidth 1.8s ease-in-out;
+}
+
+@keyframes expandWidth {
+  0% { width: 0; }
+}
