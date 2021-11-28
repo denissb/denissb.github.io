@@ -7,8 +7,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      BUILD_DIR: _site
     steps:
       - uses: actions/checkout@v2
 
@@ -23,6 +21,6 @@ jobs:
       - name: Deploy
         uses: crazy-max/ghaction-github-pages@v2.0.1
         with:
-          build_dir: $BUILD_DIR
+          build_dir: ./_site
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
