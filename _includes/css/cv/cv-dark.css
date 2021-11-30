@@ -173,8 +173,9 @@
 
     & .cv-social-links {
       & a {
-        display: inline;
-        padding-right: 0.5em;
+        display: inline-block;
+        margin-right: 0.7em;
+        margin-bottom: 0.5em;
       }
     }  
   }
