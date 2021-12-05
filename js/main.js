@@ -9,15 +9,14 @@ document.querySelectorAll("oom-search").forEach((el) => {
   });
 });
 
-
-const animationObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
+const animationObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('animating');
+      entry.target.classList.add("animating");
     }
   });
 });
 
-document.querySelectorAll('.bar-progress').forEach((el) =>
+document.querySelectorAll(".bar-progress").forEach((el) =>
   animationObserver.observe(el)
 );

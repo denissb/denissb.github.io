@@ -1,6 +1,8 @@
 # denissb.github.io
 
-A Github profile homepage built with [Lume](https://github.com/lumeland/lume) static site generator.
+A Github profile homepage built with [Lume](https://github.com/lumeland/lume)
+static site generator.
+
 ## Getting Started
 
 1. Clone this Repository
