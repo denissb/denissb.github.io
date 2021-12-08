@@ -78,7 +78,7 @@ cv:
       company: Accenture
       location: Riga
       description: |
-        Front-end development with focus on cloud architecture (AWS, Azure, OpenShift, CI/CD). Building UIs for R&D projects in Cloud Management tooling in collaboratin with teams distributed all over the world.
+        Front-end development with focus on cloud architecture (AWS, Azure, OpenShift, CI/CD). Building UIs for R&D projects in Cloud Management tooling in collaboration with teams distributed all over the world.
     - period: September 2013 – December 2015
       position: Senior Software Developer
       company: Accenture
