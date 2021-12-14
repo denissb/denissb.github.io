@@ -28,7 +28,7 @@ requirements in terms of runtime maturity or having a vibrant (sometimes too
 vibrant) echosystem of packages such as the one provided by npm. Additionally
 Deno is super simple to set up and keep up to date.
 
-Sets go over some key advantages of [Deno](https://deno.land/):
+Lets go over some key advantages of [Deno](https://deno.land/):
 
 - First class TypeScript support
 - Ability to use deno fmt instead of configuring eslint (but both are possible)
@@ -38,7 +38,7 @@ Sets go over some key advantages of [Deno](https://deno.land/):
   permissions depending on the applications needs.
 - Easy integration with WebAssembly and Rust modules.
 
-Why [Lume](https://lumeland.github.io/) for a simple static site:
+Reasons for using [Lume](https://lumeland.github.io/) for a simple static site:
 
 - Blazing fast ⚡
 - Works similarly to Jekyll and Gatsby but runs on Deno
