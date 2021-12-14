@@ -13,7 +13,7 @@ Two weeks ago I decided to update my personal website as part of an endeavour to
 improve my self-promotion. As I stared working on the things I wanted to build I
 quickly understood that most of the Jekyll plugins and custom code I used to
 previously build the site are now largely incompatible with the new versions of
-Jekyll and Ruby. As I am for from a Ruby expert I decided to move my website to
+Jekyll and Ruby. As I am far from a Ruby expert I decided to move my website to
 a familiar technology such as Gatsby or Next.JS as part of the process. But
 since I have been experimenting with [Deno](https://deno.land/) and
 [Deno Deploy](https://deno.com/deploy) I decided to search for a static site
@@ -23,10 +23,10 @@ generator built with Deno and my search quickly lead me to find
 ## Why Deno and Lume
 
 The choice of using Deno over Node.JS for something simple and light weight was
-obvious to me. Since in scope of my personal website I do not have any strong
+obvious to me since in scope of my personal website I do not have any strong
 requirements in terms of runtime maturity or having a vibrant (sometimes too
 vibrant) echosystem of packages such as the one provided by npm. Additionally
-Deno is super simple to set up and keep up todate.
+Deno is super simple to set up and keep up to date.
 
 Sets go over some key advantages of [Deno](https://deno.land/):
 
@@ -55,11 +55,11 @@ wanted.
 
 I even set up a [simple event hook](https://lumeland.github.io/core/events/)
 that allowed me to generate a `.pdf` version of my CV from it's markdown page
-using puppeteer, so when I edit the file a new version of the `pdf` is generated
-on the fly.
+using puppeteer, so when I edit the CV page a new version of the `pdf` is
+generated on the fly.
 
 The source code of my website which you are currently reading can be found
 [here](https://github.com/denissb/denissb.github.io) in case you want to have a
-look.
+look. :wink:
 
 Happy hacking! 🕊

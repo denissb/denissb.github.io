@@ -6,12 +6,17 @@ import codeHighlight from "lume/plugins/code_highlight.ts";
 import basePath from "lume/plugins/base_path.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
 import resolveUrls from "lume/plugins/resolve_urls.ts";
+import markdownEmoji from "https://jspm.dev/markdown-it-emoji";
 import gpm from "https://deno.land/x/gpm@v0.2.0/mod.ts";
 import generatePdf from "./eventHandlers/generatePdf.ts";
 
+const markdown = {
+  plugins: [markdownEmoji],
+};
+
 const site = lume({
   location: new URL("https://denissb.github.io/"),
-});
+}, { markdown });
 
 site.addEventListener("afterUpdate", (event: { files: Set<string> }) => {
   const isCVUpdate = event.files.has("/cv.md");
