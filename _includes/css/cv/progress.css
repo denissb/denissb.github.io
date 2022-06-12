@@ -28,7 +28,7 @@
 
 .progress-bar {
   background: var(--lightgray);
-  border-radius: 1rem;;
+  border-radius: 1rem;
 }
 
 .bar-progress {
@@ -36,10 +36,14 @@
   display: block;
   border-radius: 1rem;
   background-color: var(--darkgray);
-}
 
-.bar-progress.animating {
-  animation: expandWidth 1.8s ease-in-out;
+  &.js-before-animation {
+    visibility: hidden;
+  }
+
+  &.js-animating {
+    animation: expandWidth 1.8s ease-in-out;
+  }
 }
 
 @keyframes expandWidth {
