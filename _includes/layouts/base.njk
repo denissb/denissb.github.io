@@ -18,6 +18,15 @@
     <meta name="theme-color" content="#ffffff">
     <meta name="google-site-verification" content="0-o_0f0fZxvMVaApIA7vuylhpXtywnDknD3KyKbALok" />
     <script type="module" src="/js/main.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SV0BW2J8H3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-SV0BW2J8H3');
+    </script>
   </head>
   <body>
     <nav {% if url == '/' %}class="navbar home"{% else %}class="navbar"{% endif %}>
