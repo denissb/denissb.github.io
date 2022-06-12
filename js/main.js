@@ -12,11 +12,13 @@ document.querySelectorAll("oom-search").forEach((el) => {
 const animationObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      entry.target.classList.add("animating");
+      entry.target.classList.remove("js-before-animation");
+      entry.target.classList.add("js-animating");
     }
   });
 });
 
-document.querySelectorAll(".bar-progress").forEach((el) =>
-  animationObserver.observe(el)
-);
+document.querySelectorAll(".bar-progress").forEach((el) => {
+  el.classList.add("js-before-animation");
+  animationObserver.observe(el);
+});
