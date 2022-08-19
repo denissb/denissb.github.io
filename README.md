@@ -10,9 +10,10 @@ static site generator.
 2. Edit `_data/site.yml`. Specifically have a look at `_config.js` to see if you
    want to configure any option differently. See the
    [Lume documentation site](https://lumeland.github.io/).
-3. Make sure you have the latest version of Deno and lume installed:
-   `deno upgrade && lume upgrade`
-4. Run Lume `lume --serve`
+3. Edit `_data/site.yml`. Specifically have a look at `_config.js` to see if you
+   want to configure any option differently. See the
+   [Lume documentation site](https://lume.land/).
+4. Run Lume with `deno task serve`.
 
 ### Implementation Notes
 
@@ -53,10 +54,39 @@ static site generator.
 - [Get your own Lume blog on Vercel](https://vercel.com/new/git/external?repository-url=https://github.com/lumeland/base-blog)
 - You need to config your the project manually with the following values:
   - **Build Command:**
-    `curl -fsSL https://deno.land/x/install/install.sh | sh && /vercel/.deno/bin/deno run -A https://deno.land/x/lume/ci.ts --location=https://example.vercel.app/`.
+    `curl -fsSL https://deno.land/x/install/install.sh | sh && /vercel/.deno/bin/deno task build --location=https://example.vercel.app/`.
     Edit the `--location` option with the name of your domain.
   - **Output directory:** `_site`
 - [See a live demo](https://lume-blog.vercel.app/)
+
+### Cloudflare Pages
+
+- Configure the project with the following values:
+  - **Build Command:**
+    `curl -fsSL https://deno.land/x/install/install.sh | sh && /opt/buildhome/.deno/bin/deno task build --location=https://example.pages.dev/`.
+    Edit the `--location` option with the name of your domain.
+  - **Output directory:** `_site`
+- [See a live demo](https://base-blog.pages.dev/)
+
+### AWS Amplify
+
+- Configure the `amplify.yml` file with the following values:
+  ```yml
+  version: 1
+  frontend:
+    phases:
+      build:
+        commands:
+          - curl -fsSL https://deno.land/x/install/install.sh | sh
+          - /root/.deno/bin/deno run -A https://deno.land/x/lume/ci.ts
+    artifacts:
+      baseDirectory: /_site
+      files:
+        - '**/*'
+    cache:
+      paths: []
+  ```
+- [See a live demo](https://master.docjzml5t5if1.amplifyapp.com/)
 
 ### Netlify
 
