@@ -7,7 +7,7 @@ menu:
 cv:
   name: Deniss Borisovs
   occupation: Senior Web Developer focused on Front-end
-  updateDate: 2021-12-04
+  updateDate: 2022-19-08
   contact:
     email: deniss.borisovs@gmail.com
   description: |
@@ -25,7 +25,7 @@ cv:
 
   personalInfo:
     location: Copenhagen, Denmark
-    birthDate: 1989-09-27
+    birthDate: 1989-09-26
     nationality: Latvian
     drivingLicense: B
   socialLinks:
@@ -61,12 +61,18 @@ cv:
     - name: Android development
       level: 2
   employment:
-    - period: February 2019 – Present
+    - period: August 2022 - present
+      position: Senior Frontend Consultant
+      company: Saxo Bank
+      location: Copenhagen
+      description: | 
+        Software Development for the Native Apps team in Saxo Platforms Technology Department. Working on mostly on the development, maintenance and release of iOS and Android apps for SaxoTraderGO and SaxoInvestor using React Native and React.
+    - period: February 2019 – August 2022
       position: Frontend developer
       company: Sampension
       location: Copenhagen
       description: |
-        Cross-platform Front-end development of a customer service application with React Native + react-native-web. Development and design of a microfrontend based solution using React for a back-office system.
+        Cross-platform Front-end development of a customer facing application with React Native + react-native-web. Development and design of a microfrontend based solution using React and module federation for a back-office system.
     - period: January 2016 – January 2019
       position: Senior software developer
       company: ARHS Digital

@@ -7,19 +7,23 @@ import basePath from "lume/plugins/base_path.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
 import resolveUrls from "lume/plugins/resolve_urls.ts";
 import markdownEmoji from "https://jspm.dev/markdown-it-emoji";
-import gpm from "https://deno.land/x/gpm@v0.2.0/mod.ts";
+import gpm from "https://deno.land/x/gpm@v0.4.1/mod.ts";
+import netlifyCMS from "lume/plugins/netlify_cms.ts";
 import generatePdf from "./eventHandlers/generatePdf.ts";
 
 const markdown = {
   plugins: [markdownEmoji],
 };
 
-const site = lume({
-  location: new URL("https://denissb.github.io/"),
-}, { markdown });
+const site = lume(
+  {
+    location: new URL("https://denissb.github.io/"),
+  },
+  { markdown }
+);
 
-site.addEventListener("afterUpdate", (event: { files: Set<string> }) => {
-  const isCVUpdate = event.files.has("/cv.md");
+site.addEventListener("afterUpdate", (event) => {
+  const isCVUpdate = event.files && event.files.has("/cv.md");
   if (isCVUpdate) {
     generatePdf({
       targetFolder: "./assets",
@@ -41,9 +45,9 @@ site
   .use(basePath())
   .use(slugifyUrls({ alphanumeric: false }))
   .use(resolveUrls())
-  .addEventListener(
-    "beforeBuild",
-    () => gpm(["oom-components/searcher"], "js/vendor"),
+  .use(netlifyCMS({ netlifyIdentity: true }))
+  .addEventListener("beforeBuild", () =>
+    gpm(["oom-components/searcher"], "js/vendor")
   );
 
 export default site;
