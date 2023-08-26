@@ -66,7 +66,7 @@ cv:
       company: Saxo Bank
       location: Copenhagen
       description: | 
-        Software Development for the Native Apps team in Saxo Platforms Technology Department. Working on mostly on the development, maintenance and release of iOS and Android apps for SaxoTraderGO and SaxoInvestor using React Native and React.
+        Software Development for the Native Apps team in Saxo Platforms Technology Department. Working mainly on the development, maintenance and release of iOS and Android apps for SaxoTraderGO and SaxoInvestor using React Native and React.
     - period: February 2019 – August 2022
       position: Frontend developer
       company: Sampension
