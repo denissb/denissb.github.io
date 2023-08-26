@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Setup Deno environment
         uses: denoland/setup-deno@v1
@@ -27,7 +27,7 @@ jobs:
         run: |
           deno task build --location=https://denissb.github.io/
       - name: Deploy
-        uses: crazy-max/ghaction-github-pages@v2.0.1
+        uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           build_dir: ./_site
         env:

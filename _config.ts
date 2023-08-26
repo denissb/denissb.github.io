@@ -7,7 +7,7 @@ import basePath from "lume/plugins/base_path.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
 import resolveUrls from "lume/plugins/resolve_urls.ts";
 import markdownEmoji from "https://jspm.dev/markdown-it-emoji";
-import gpm from "https://deno.land/x/gpm@v0.4.1/mod.ts";
+import gpm from "https://deno.land/x/gpm@v0.5.0/mod.ts";
 import netlifyCMS from "lume/plugins/netlify_cms.ts";
 import generatePdf from "./eventHandlers/generatePdf.ts";
 
@@ -46,8 +46,6 @@ site
   .use(slugifyUrls({ alphanumeric: false }))
   .use(resolveUrls())
   .use(netlifyCMS({ netlifyIdentity: true }))
-  .addEventListener("beforeBuild", () =>
-    gpm(["oom-components/searcher"], "js/vendor")
-  );
+  .addEventListener("beforeBuild", () => gpm(["oom-components/searcher"], "js/vendor"));
 
 export default site;
