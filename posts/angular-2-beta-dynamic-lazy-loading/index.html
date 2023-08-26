@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular 2 dynamic lazy loading</title>
+    <meta name="description" content="A post on dynamic lazy loading with Angular 2 beta.">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Deniss Borisovs | Web developer">
+    <link rel="alternate" href="/feed.json" type="application/json" title="Deniss Borisovs | Web developer">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="google-site-verification" content="0-o_0f0fZxvMVaApIA7vuylhpXtywnDknD3KyKbALok">
+    <script type="module" src="/js/main.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SV0BW2J8H3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-SV0BW2J8H3');
+    </script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="/" class="navbar-home">
+        <strong>Deniss Borisovs | Web developer</strong>
+      </a>
+
+      <ul class="navbar-links">
+        <li>
+          <a href="/">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="/posts/">
+            Blog
+          </a>
+        </li>
+        <li>
+          <a href="/cv/">
+            CV
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="body-post">
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">Angular 2 dynamic lazy loading</h1>
+
+    <nav class="post-tags">
+    
+      <a href="/tags/angular 2 beta/" class="tag">angular 2 beta</a>
+    
+      <a href="/tags/lazy loading/" class="tag">lazy loading</a>
+    
+    </nav>
+
+    <time class="post-date" datetime="2016-02-27 00:00:00">
+      February 27th, 2016
+    </time>
+  </header>
+
+  <div class="post-body">
+    <p>I started
+<a href="https://github.com/spawnius/angular2-dynamic-lazy-loading">this little experiment</a>
+when an idea came to my mind that Angular 2 can be used not only for single page
+applications, but also to build dynamic component based websites.</p>
+<p>What I wanted to achieve is - dynamically loaded and initialised components
+based on the html provided in the root application component as a template. The
+idea is smiliar to projection in Angular2 but happens dynamically, without the
+need to pre-register the routes and components in the application code. So I
+hope the name does not confuse you so much.</p>
+<p>This approach might be useful for a CMS system where editors want to specify
+components on the page by simply using custom tags in a WYSIWYG editor, or apps
+that have a large number of components that can be moved or removed from pages.</p>
+<p>My first thought was that it can be achieved on the back end side by generating
+javascript on the fly that registers components and routes. But I quickly
+dropped the idea by deciding that it's better to put apples to apples and leave
+front end things where they are supposed to be, well... the front end. So after
+a couple evenings I managed to code a
+<a href="https://github.com/spawnius/angular2-dynamic-lazy-loading">PoC</a>.</p>
+<p>The Angular 2 application needs to be loaded after the promise returned by
+AsyncProviders SETUP is resolved. The SETUP method is static and accepts two
+parameters - the tag name of the application component and the path to the
+components folder. The dependencies are resolved before the application code is
+loaded, and exposed to the application component as static properties on the
+AsyncProvider.</p>
+<p><a href="https://github.com/spawnius/angular2-dynamic-lazy-loading/blob/master/app/main.ts">Example</a>:</p>
+<pre><code class="language-js hljs language-javascript"><span class="hljs-title class_">AsyncProvider</span>.<span class="hljs-title function_">SETUP</span>(<span class="hljs-string">"my-app"</span>, <span class="hljs-string">"./app/components"</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-comment">// Now we are ready to initialize the app with lazy loaded components</span>
+  <span class="hljs-title class_">System</span>.<span class="hljs-keyword">import</span>(<span class="hljs-string">"./app/components/app.component"</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params"><span class="hljs-variable language_">module</span></span>) =&gt;</span> {
+    <span class="hljs-title function_">bootstrap</span>(<span class="hljs-variable language_">module</span>.<span class="hljs-property">default</span>);
+  });
+});
+</code></pre>
+<p>During this process the following steps are performed by AsyncProvider:</p>
+<ol>
+<li>html is extracted from the body of the root component (provided in
+index.html)</li>
+<li>The extracted html is analysed for custom tags</li>
+<li>AsyncProvider tries to load a component for each custom tag</li>
+<li>An app level route is generated for each component with the tag name of the
+component as its base and capitalized name as route name</li>
+<li>The previously extracted html is used as the template to render the app and
+defined components</li>
+<li>App gets loaded using System.import and reads a static property on
+AsyncProvider to get route, component and template definitions.</li>
+</ol>
+<p>A working example can be found in the
+<a href="https://github.com/spawnius/angular2-dynamic-lazy-loading">github repo</a>.</p>
+<p>If you are interested in the idea please don't hesitate to create an issue or
+pull request ^__-</p>
+<p>Thanks for visiting!</p>
+
+  </div>
+</article>
+
+<hr>
+
+<nav class="post-navigation">
+  <ul>
+    <li>
+      ← Previous: <a href="/posts/hello-world/" rel="prev">Hello world!</a>
+    </li>
+    
+    <li>
+      <strong>Next: <a href="/posts/angular2-beta-todo-app-ngrx/" rel="next">Angular 2 Todo app using ngrx and ngrx/devtools</a> →</strong>
+    </li>
+    
+  </ul>
+</nav>
+    </main>
+
+    <!-- Current page: /posts/angular-2-beta-dynamic-lazy-loading/ -->
+    <footer>
+  <div>
+    <p>Home of another web developer, built with <a href="https://lumeland.github.io/">Lume</a>.</p>
+    <a href="mailto:deniss.borisovs@gmail.com">deniss.borisovs@gmail.com</a>
+  </div>
+  <div>
+    <p><i>Coffe and code, code and coffe - what else do you need?</i> ☕</p>
+  </div>
+</footer>
+
+  
+
+</body></html>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>Deniss Borisovs | Web developer</title>
+	<subtitle>Web developer focused on Front-end and UI/UX development</subtitle>
+	<link href="https://denissb.github.io/feed.xml" rel="self"/>
+	<link href="https://denissb.github.io/"/>
+	
+	<updated>2023-08-26T22:52:05Z</updated>
+	<id>https://denissb.github.io/</id>
+	<author>
+		<name>Deniss Borisovs,</name>
+		<email>deniss.borisovs@gmail.com,</email>
+	</author>
+	<entry>
+		<title>Website update using Lume and Deno</title>
+		<link href="https://denissb.github.io/posts/blog-update-using-lume/"/>
+		<updated>2023-08-26T22:52:05Z</updated>
+		<id>https://denissb.github.io/posts/blog-update-using-lume/</id>
+		<content type="html">&lt;h2&gt;Intro&lt;/h2&gt;
+&lt;p&gt;Two weeks ago I decided to update my personal website as part of an endeavour to
+improve my self-promotion. As I stared working on the things I wanted to build I
+quickly understood that most of the Jekyll plugins and custom code I used to
+previously build the site are now largely incompatible with the new versions of
+Jekyll and Ruby. As I am far from a Ruby expert I decided to move my website to
+a familiar technology such as Gatsby or Next.JS as part of the process. But
+since I have been experimenting with &lt;a href=&quot;https://deno.land/&quot;&gt;Deno&lt;/a&gt; and
+&lt;a href=&quot;https://deno.com/deploy&quot;&gt;Deno Deploy&lt;/a&gt; I decided to search for a static site
+generator built with Deno and my search quickly lead me to find
+&lt;a href=&quot;https://lumeland.github.io/&quot;&gt;Lume&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Why Deno and Lume&lt;/h2&gt;
+&lt;p&gt;The choice of using Deno over Node.JS for something simple and light weight was
+obvious to me since in scope of my personal website I do not have any strong
+requirements in terms of runtime maturity or having a vibrant (sometimes too
+vibrant) echosystem of packages such as the one provided by npm. Additionally
+Deno is super simple to set up and keep up to date.&lt;/p&gt;
+&lt;p&gt;Lets go over some key advantages of &lt;a href=&quot;https://deno.land/&quot;&gt;Deno&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First class TypeScript support&lt;/li&gt;
+&lt;li&gt;Ability to use deno fmt instead of configuring eslint (but both are possible)&lt;/li&gt;
+&lt;li&gt;No need for babel with most latest ES6 features supported out of the box,
+including ES6 modules and top-level async/await.&lt;/li&gt;
+&lt;li&gt;A secure sandbox runtime environment which requires to explicitly set access
+permissions depending on the applications needs.&lt;/li&gt;
+&lt;li&gt;Easy integration with WebAssembly and Rust modules.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Reasons for using &lt;a href=&quot;https://lumeland.github.io/&quot;&gt;Lume&lt;/a&gt; for a simple static site:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Blazing fast ⚡&lt;/li&gt;
+&lt;li&gt;Works similarly to Jekyll and Gatsby but runs on Deno&lt;/li&gt;
+&lt;li&gt;Supports all of the most popular file and template formats&lt;/li&gt;
+&lt;li&gt;Super simple setup and configuration allowing you to enable only what you need
+for your site.&lt;/li&gt;
+&lt;li&gt;Heavily customizable using Scripts, Events, Processors, Loaders, and Plugins.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Setting up a website with Lume was very easy, but after I looked at examples I
+decided to use their &lt;a href=&quot;https://github.com/lumeland/base-blog&quot;&gt;Base Blog starter&lt;/a&gt;
+as a baseline. It was a smooth starting point with clear instructions on how to
+deploy the site to GitHub pages using GitHub actions which is exactly what I
+wanted.&lt;/p&gt;
+&lt;p&gt;I even set up a &lt;a href=&quot;https://lumeland.github.io/core/events/&quot;&gt;simple event hook&lt;/a&gt;
+that allowed me to generate a &lt;code&gt;.pdf&lt;/code&gt; version of my CV from it&#39;s markdown page
+using puppeteer, so when I edit the CV page a new version of the &lt;code&gt;pdf&lt;/code&gt; is
+generated on the fly.&lt;/p&gt;
+&lt;p&gt;The source code of my website which you are currently reading can be found
+&lt;a href=&quot;https://github.com/denissb/denissb.github.io&quot;&gt;here&lt;/a&gt; in case you want to have a
+look. 😉&lt;/p&gt;
+&lt;p&gt;Happy hacking! 🕊&lt;/p&gt;</content>
+	</entry>
+	<entry>
+		<title>Angular 2 dynamic lazy loading</title>
+		<link href="https://denissb.github.io/posts/angular-2-beta-dynamic-lazy-loading/"/>
+		<updated>2016-02-27T00:00:00Z</updated>
+		<id>https://denissb.github.io/posts/angular-2-beta-dynamic-lazy-loading/</id>
+		<content type="html">&lt;p&gt;I started
+&lt;a href=&quot;https://github.com/spawnius/angular2-dynamic-lazy-loading&quot;&gt;this little experiment&lt;/a&gt;
+when an idea came to my mind that Angular 2 can be used not only for single page
+applications, but also to build dynamic component based websites.&lt;/p&gt;
+&lt;p&gt;What I wanted to achieve is - dynamically loaded and initialised components
+based on the html provided in the root application component as a template. The
+idea is smiliar to projection in Angular2 but happens dynamically, without the
+need to pre-register the routes and components in the application code. So I
+hope the name does not confuse you so much.&lt;/p&gt;
+&lt;p&gt;This approach might be useful for a CMS system where editors want to specify
+components on the page by simply using custom tags in a WYSIWYG editor, or apps
+that have a large number of components that can be moved or removed from pages.&lt;/p&gt;
+&lt;p&gt;My first thought was that it can be achieved on the back end side by generating
+javascript on the fly that registers components and routes. But I quickly
+dropped the idea by deciding that it&#39;s better to put apples to apples and leave
+front end things where they are supposed to be, well... the front end. So after
+a couple evenings I managed to code a
+&lt;a href=&quot;https://github.com/spawnius/angular2-dynamic-lazy-loading&quot;&gt;PoC&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The Angular 2 application needs to be loaded after the promise returned by
+AsyncProviders SETUP is resolved. The SETUP method is static and accepts two
+parameters - the tag name of the application component and the path to the
+components folder. The dependencies are resolved before the application code is
+loaded, and exposed to the application component as static properties on the
+AsyncProvider.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/spawnius/angular2-dynamic-lazy-loading/blob/master/app/main.ts&quot;&gt;Example&lt;/a&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;AsyncProvider.SETUP(&amp;quot;my-app&amp;quot;, &amp;quot;./app/components&amp;quot;).then(() =&amp;gt; {
+  // Now we are ready to initialize the app with lazy loaded components
+  System.import(&amp;quot;./app/components/app.component&amp;quot;).then((module) =&amp;gt; {
+    bootstrap(module.default);
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;During this process the following steps are performed by AsyncProvider:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;html is extracted from the body of the root component (provided in
+index.html)&lt;/li&gt;
+&lt;li&gt;The extracted html is analysed for custom tags&lt;/li&gt;
+&lt;li&gt;AsyncProvider tries to load a component for each custom tag&lt;/li&gt;
+&lt;li&gt;An app level route is generated for each component with the tag name of the
+component as its base and capitalized name as route name&lt;/li&gt;
+&lt;li&gt;The previously extracted html is used as the template to render the app and
+defined components&lt;/li&gt;
+&lt;li&gt;App gets loaded using System.import and reads a static property on
+AsyncProvider to get route, component and template definitions.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;A working example can be found in the
+&lt;a href=&quot;https://github.com/spawnius/angular2-dynamic-lazy-loading&quot;&gt;github repo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you are interested in the idea please don&#39;t hesitate to create an issue or
+pull request ^__-&lt;/p&gt;
+&lt;p&gt;Thanks for visiting!&lt;/p&gt;</content>
+	</entry>
+	<entry>
+		<title>Angular 2 Todo app using ngrx and ngrx/devtools</title>
+		<link href="https://denissb.github.io/posts/angular2-beta-todo-app-ngrx/"/>
+		<updated>2016-02-27T00:00:00Z</updated>
+		<id>https://denissb.github.io/posts/angular2-beta-todo-app-ngrx/</id>
+		<content type="html">&lt;p&gt;On a bored afternoon I decided it would be cool to learn how to build an
+Angular2 application using &lt;a href=&quot;https://github.com/ngrx&quot;&gt;ngrx&lt;/a&gt; with state tracking
+and devtool integration. A working example can be found on github for both
+&lt;a href=&quot;https://github.com/spawnius/angular2-todo/tree/redux&quot;&gt;redux&lt;/a&gt; and
+&lt;a href=&quot;https://github.com/spawnius/angular2-todo&quot;&gt;basic&lt;/a&gt; implementations.&lt;/p&gt;
+&lt;p&gt;Immutability and uni-directional flow can help us build more robust, scalable
+and performant front-end applications. Not to mention it&#39;s cool to be able to
+track the state of your application and manipulate it on demand.&lt;/p&gt;
+&lt;p&gt;A possible improvement would be to implement a branch that is more compliant
+with &lt;a href=&quot;https://en.wikipedia.org/wiki/Functional_reactive_programming&quot;&gt;RFP&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Thanks for visiting!&lt;/p&gt;</content>
+	</entry>
+	<entry>
+		<title>Hello world!</title>
+		<link href="https://denissb.github.io/posts/hello-world/"/>
+		<updated>2016-02-15T00:00:00Z</updated>
+		<id>https://denissb.github.io/posts/hello-world/</id>
+		<content type="html">&lt;p&gt;I decided to upgrade my github page to Jekyll, not sure I want to commit to
+making blog posts but why not have the option..&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;// It&#39;s as simple as:
+console.log(&amp;quot;Hello world!&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;</content>
+	</entry>
+</feed>

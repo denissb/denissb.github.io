@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website update using Lume and Deno</title>
+    <meta name="description" content="I updated my blog to use Deno and Lume to have more fammiliarity with the underlying infrastructure compard to Jekyll.">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Deniss Borisovs | Web developer">
+    <link rel="alternate" href="/feed.json" type="application/json" title="Deniss Borisovs | Web developer">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="google-site-verification" content="0-o_0f0fZxvMVaApIA7vuylhpXtywnDknD3KyKbALok">
+    <script type="module" src="/js/main.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-SV0BW2J8H3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-SV0BW2J8H3');
+    </script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="/" class="navbar-home">
+        <strong>Deniss Borisovs | Web developer</strong>
+      </a>
+
+      <ul class="navbar-links">
+        <li>
+          <a href="/">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="/posts/">
+            Blog
+          </a>
+        </li>
+        <li>
+          <a href="/cv/">
+            CV
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="body-post">
+      <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">Website update using Lume and Deno</h1>
+
+    <nav class="post-tags">
+    
+      <a href="/tags/Lume/" class="tag">Lume</a>
+    
+      <a href="/tags/Deno/" class="tag">Deno</a>
+    
+      <a href="/tags/Blog update/" class="tag">Blog update</a>
+    
+    </nav>
+
+    <time class="post-date" datetime="2023-08-26 22:52:05">
+      August 26th, 2023
+    </time>
+  </header>
+
+  <div class="post-body">
+    <h2>Intro</h2>
+<p>Two weeks ago I decided to update my personal website as part of an endeavour to
+improve my self-promotion. As I stared working on the things I wanted to build I
+quickly understood that most of the Jekyll plugins and custom code I used to
+previously build the site are now largely incompatible with the new versions of
+Jekyll and Ruby. As I am far from a Ruby expert I decided to move my website to
+a familiar technology such as Gatsby or Next.JS as part of the process. But
+since I have been experimenting with <a href="https://deno.land/">Deno</a> and
+<a href="https://deno.com/deploy">Deno Deploy</a> I decided to search for a static site
+generator built with Deno and my search quickly lead me to find
+<a href="https://lumeland.github.io/">Lume</a>.</p>
+<h2>Why Deno and Lume</h2>
+<p>The choice of using Deno over Node.JS for something simple and light weight was
+obvious to me since in scope of my personal website I do not have any strong
+requirements in terms of runtime maturity or having a vibrant (sometimes too
+vibrant) echosystem of packages such as the one provided by npm. Additionally
+Deno is super simple to set up and keep up to date.</p>
+<p>Lets go over some key advantages of <a href="https://deno.land/">Deno</a>:</p>
+<ul>
+<li>First class TypeScript support</li>
+<li>Ability to use deno fmt instead of configuring eslint (but both are possible)</li>
+<li>No need for babel with most latest ES6 features supported out of the box,
+including ES6 modules and top-level async/await.</li>
+<li>A secure sandbox runtime environment which requires to explicitly set access
+permissions depending on the applications needs.</li>
+<li>Easy integration with WebAssembly and Rust modules.</li>
+</ul>
+<p>Reasons for using <a href="https://lumeland.github.io/">Lume</a> for a simple static site:</p>
+<ul>
+<li>Blazing fast ⚡</li>
+<li>Works similarly to Jekyll and Gatsby but runs on Deno</li>
+<li>Supports all of the most popular file and template formats</li>
+<li>Super simple setup and configuration allowing you to enable only what you need
+for your site.</li>
+<li>Heavily customizable using Scripts, Events, Processors, Loaders, and Plugins.</li>
+</ul>
+<p>Setting up a website with Lume was very easy, but after I looked at examples I
+decided to use their <a href="https://github.com/lumeland/base-blog">Base Blog starter</a>
+as a baseline. It was a smooth starting point with clear instructions on how to
+deploy the site to GitHub pages using GitHub actions which is exactly what I
+wanted.</p>
+<p>I even set up a <a href="https://lumeland.github.io/core/events/">simple event hook</a>
+that allowed me to generate a <code>.pdf</code> version of my CV from it's markdown page
+using puppeteer, so when I edit the CV page a new version of the <code>pdf</code> is
+generated on the fly.</p>
+<p>The source code of my website which you are currently reading can be found
+<a href="https://github.com/denissb/denissb.github.io">here</a> in case you want to have a
+look. 😉</p>
+<p>Happy hacking! 🕊</p>
+
+  </div>
+</article>
+
+<hr>
+
+<nav class="post-navigation">
+  <ul>
+    <li>
+      ← Previous: <a href="/posts/angular2-beta-todo-app-ngrx/" rel="prev">Angular 2 Todo app using ngrx and ngrx/devtools</a>
+    </li>
+    
+  </ul>
+</nav>
+    </main>
+
+    <!-- Current page: /posts/blog-update-using-lume/ -->
+    <footer>
+  <div>
+    <p>Home of another web developer, built with <a href="https://lumeland.github.io/">Lume</a>.</p>
+    <a href="mailto:deniss.borisovs@gmail.com">deniss.borisovs@gmail.com</a>
+  </div>
+  <div>
+    <p><i>Coffe and code, code and coffe - what else do you need?</i> ☕</p>
+  </div>
+</footer>
+
+  
+
+</body></html>
