@@ -27,7 +27,7 @@ jobs:
         run: |
           deno task build --location=https://denissb.github.io/
       - name: Deploy
-        uses: crazy-max/ghaction-github-pages@v3.1.0
+        uses: crazy-max/ghaction-github-pages@v3.2.0
         with:
           build_dir: ./_site
         env:
