@@ -1,8 +1,45 @@
 {
-  "importMap": "import_map.json",
+  "imports": {
+    "lume/": "https://cdn.jsdelivr.net/gh/lumeland/lume@3.3.3/",
+    "lume/jsx-runtime": "https://cdn.jsdelivr.net/gh/oscarotero/ssx@0.1.16/jsx-runtime.ts"
+  },
+  "lock": false,
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "lume",
+    "types": [
+      "lume/types.ts"
+    ]
+  },
   "tasks": {
-    "build": "deno task lume",
-    "serve": "deno task lume -s",
-    "lume": "echo \"import 'lume/cli.ts'\" | deno run --unstable -A -"
-  }
+    "build": {
+      "description": "Build the site for production",
+      "command": "deno task lume"
+    },
+    "serve": {
+      "description": "Run and serve the site for development",
+      "command": "deno task lume -s"
+    },
+    "lume": {
+      "description": "Run Lume command",
+      "command": "deno run -A lume/cli.ts"
+    }
+  },
+  "lint": {
+    "exclude": [
+      "js/vendor"
+    ],
+    "rules": {
+      "exclude": [
+        "no-import-prefix"
+      ]
+    },
+    "plugins": [
+      "https://cdn.jsdelivr.net/gh/lumeland/lume@3.3.3/lint.ts"
+    ]
+  },
+  "unstable": [
+    "temporal",
+    "fmt-component"
+  ]
 }
