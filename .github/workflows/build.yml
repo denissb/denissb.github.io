@@ -21,7 +21,7 @@ jobs:
           path: |
             ~/.deno
             ~/.cache/deno
-          key: ${{ runner.os }}-deno-${{ hashFiles('**/_config.ts', '**/import_map.json') }}
+          key: ${{ runner.os }}-deno-${{ hashFiles('**/_config.ts', '**/deno.json') }}
 
       - name: Build site
         run: |

@@ -27,7 +27,7 @@ static site generator.
 - `css` files are processed with `postcss` plugin. The imported styles are in
   `_includes/css`
 - `img` folder is copied as is, (keeping the same directory structure).
-- The blog post feed template is in `feed.xml.njk` and `feed.tmpl.js`.
+- The blog post feed template is in `feed.xml.njk` and `feed.page.js`.
 - This example uses four layouts stored in `_includes/layouts/`:
   - `base.njk`: the top level HTML structure
   - `home.njk`: the home page template (wrapped into `base.njk`)
@@ -35,8 +35,8 @@ static site generator.
   - `tag.njk`: the tag page template (wrapped into `base.njk`)
 - `_includes/templates/postlist.njk` is a Nunjucks a reusable template used to
   display a list of all the posts. `index.njk` has an example of how to use it.
-- `admin/` has the [NetlifyCMS](https://www.netlifycms.org/) configuration so
-  you can edit or create new posts using a friendly CMS.
+- `admin/` has the [Decap CMS](https://decapcms.org/) configuration so you can
+  edit or create new posts using a friendly CMS.
 
 ## Deployment
 
