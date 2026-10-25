@@ -13,7 +13,7 @@ jobs:
       - name: Setup Deno environment
         uses: denoland/setup-deno@v2.0.5
         with:
-          deno-version: v1.x
+          deno-version: 2.x
       
       - name: Setup Cache
         uses: actions/cache@v6
